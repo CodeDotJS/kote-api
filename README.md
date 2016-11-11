@@ -16,16 +16,18 @@ const kote = require('kote-api');
 
 kote.goodReads().then(quote => {
     console.log(quote);
-    // =>
+    // => { quote: Each of us has a unique part to play in the healing of the world. }
 });
 
 kote.brainyQuote().then(quote => {
     console.log(quote);
-    // =>
+    // { quote: 'Hope is but the dream of those wake.' }
+
 });
 
 kote.eduro().then(user => {
     console.log(user);
+    // => { quote: 'Don’t cry because it’s over, smile because it happened.' }
 });
 ```
 
