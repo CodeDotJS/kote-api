@@ -41,7 +41,9 @@ kote.eduro().then(user => {
 
 ## Related
 
-- `Kote` : `Daily injection of wisdom, fun and love through command line`
+- [`Kote`](https://github.com/CodeDotJS/kote) : `Daily injection of wisdom, fun and love through command line`
+
+__`✒`__ API suggested by @NerdDiffer [`✒`](https://github.com/CodeDotJS/kote/issues/1)
 
 ## License
 
