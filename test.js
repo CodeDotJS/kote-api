@@ -5,7 +5,7 @@ test('goodreads', async t => {
 	const kote = await fn.goodReads();
 
 	t.is(kote.quote,
-		`“The nicest veterans...the kindest and funniest ones, the ones who hated war the most, were the ones who'd really fought.”`
+		'“O, ah! The awareness of emptiness brings forth a heart of compassion!”'
 	);
 });
 
@@ -13,7 +13,7 @@ test('brainyquote', async t => {
 	const kote = await fn.brainyQuote();
 
 	t.is(kote.quote,
-		'No one can read with profit that which he cannot learn to read with pleasure.'
+		`Be pleasant until ten o'clock in the morning and the rest of the day will take care of itself.`
 	);
 });
 
@@ -21,5 +21,5 @@ test('eduro', async t => {
 	const kote = await fn.eduro();
 
 	t.is(kote.quote,
-		'Don’t cry because it’s over, smile because it happened.');
+		'Opportunity does not knock, it presents itself when you beat down the door.');
 });

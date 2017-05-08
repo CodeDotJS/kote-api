@@ -21,7 +21,7 @@ const brainyQuotes = () => {
 	return got(url).then(res => {
 		const $ = cheerio.load(res.body);
 		return {
-			quote: $('.bqQuoteLink').eq(0).text().trim()
+			quote: $('.b-qt:link').eq(0).text().trim()
 		};
 	});
 };
