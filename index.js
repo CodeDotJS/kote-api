@@ -3,25 +3,28 @@
 const got = require('got');
 const cheerio = require('cheerio');
 
-const goodReadQuotes = () => {
-	const url = 'https://www.goodreads.com/quotes_of_the_day';
-
-	return got(url).then(res => {
-		const $ = cheerio.load(res.body);
-		const quotes = $('.quoteText').text().trim();
-		return {
-			quote: quotes.split('//<!')[0].trim().split('―')[0].trim()
-		};
-	});
+const data = {
+	love: 1,
+	art: 2,
+	nature: 3,
+	funny: 4
 };
 
-const brainyQuotes = () => {
+const brainyQuotes = opts => {
+	let val = data[opts];
+	if (!opts) {
+		val = 0;
+	}
+
+	// let val;
+	// opts === undefined ? val = 0 : val = data[opts];
+
 	const url = 'http://www.brainyquote.com/quotes_of_the_day.html';
 
 	return got(url).then(res => {
 		const $ = cheerio.load(res.body);
 		return {
-			quote: $('.b-qt:link').eq(0).text().trim()
+			quote: $('.b-qt:link').eq(val).text().trim()
 		};
 	});
 };
@@ -37,6 +40,5 @@ const eduroQuotes = () => {
 	});
 };
 
-exports.goodReads = goodReadQuotes;
 exports.brainyQuote = brainyQuotes;
 exports.eduro = eduroQuotes;
