@@ -1,8 +1,8 @@
 # kote-api [![Build Status](https://travis-ci.org/CodeDotJS/kote-api.svg?branch=master)](https://travis-ci.org/CodeDotJS/kote-api)
 
-> API to fetch quote of the day from the sites like GoodReads, BrainyQuote and Eduro.
+> Easily fetch quote of the day from BrainyQuotes and Eduro.
 
-## install
+## Install
 ```
 $ npm install --save kote-api
 ```
@@ -14,36 +14,45 @@ $ npm install --save kote-api
 
 const kote = require('kote-api');
 
-kote.goodReads().then(quote => {
-    console.log(quote);
-    // => { quote: Each of us has a unique part to play in the healing of the world. }
+kote.eduro().then(user => {
+  console.log(user);
+  // => { quote: 'Don’t cry because it’s over, smile because it happened.' }
 });
 
 kote.brainyQuote().then(quote => {
-    console.log(quote);
-    // { quote: 'Hope is but the dream of those wake.' }
-
+  console.log(quote);
+  // { quote: 'Hope is but the dream of those wake.' }
 });
 
-kote.eduro().then(user => {
-    console.log(user);
-    // => { quote: 'Don’t cry because it’s over, smile because it happened.' }
+// or
+
+kote.brainyQuote('nature').then(quote => {
+  console.log(quote);
+  // { quote: A good garden may have some weeds. }
 });
 ```
 
 ## API
 
-- __`kote.goodReads()`__ : Returns `Quote of the Day` from `GoodReads`
+- __`kote.brainyQuote()`__
 
-- __`kote.eduro()`__ : Returns `Quote of the Day` from `Eduro`
+- __`kote.brainyQuote(opts)`__
 
-- __`kote.brainyQuote()`__ : Returns `Quote of the Day` from `BrainyQuote`
+`opts`
+- `love`
+- `nature`
+- `art`
+- `funny`
+
+__`Typeof`__
+
+__`opts`__ `:` `string`
+
+- __`kote.eduro()`__
 
 ## Related
 
 - [`Kote`](https://github.com/CodeDotJS/kote) : `Daily injection of wisdom, fun and love through command line`
-
-__`✒`__ API suggested by @NerdDiffer [`✒`](https://github.com/CodeDotJS/kote/issues/1)
 
 ## License
 
